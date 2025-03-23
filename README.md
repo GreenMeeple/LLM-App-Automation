@@ -154,7 +154,7 @@ LLM-App-Automation/
 │   ├── interface_tester.py # Test for new interfaces
 │   ├── tasks_reset.py # Regenerate unprocessed.json when error occured
 ├── data/ 
-│   ├── prompts # Core automation logic   
+│   ├── prompts # parsing jailbreak prompts and tasks list
 │   │   ├── jailbreak.py # Store jailbreak prompts and tasks list
 │   │   ├── tasks_debug.json # Small set of tasks for test run
 │   │   └── tasks.json # Full set of tasks 
