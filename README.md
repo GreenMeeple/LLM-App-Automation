@@ -6,7 +6,7 @@
 
 **LLM-App-Automation** is a Python-based automation tool designed to interact and collect responses with streamline workflows involving LLM-powered Apps using [uiautomator2](https://github.com/openatx/uiautomator2). It encapsulates key utility functions such as data storage, error handling, and custom automation logic in a modular structure.
 
-## Features
+## 🔍 Features
 
 - 🔧 Modular utility scripts for:
   - Storage management (`storage.py`)
@@ -17,30 +17,30 @@
 
 ---
 
-**[Getting Started](#getting-started)**
+**[🚀 Getting Started](#-getting-started)**
 
 - **[Prerequisites](#prerequisites)**
 - **[Installation](#installation)**
 
-**[Usage](#usage)**
+**[🧭 Usage](#-usage)**
 
 - **[Arguments](#arguments)**
 - **[Other Settings](#other-settings)**
 
-**[Project Details](#project-details)**
+**[🗃️ Project Details](#L92)**
 
 - **[Sending Messages](#sending-messages)**
 - **[Collecting Responses](#collecting-responses)**
 - **[Storing Responses](#storing-responses)**
 - **[Argument `--rand`](#argument---rand)**
 
-**[Project Structure](#project-structure)**
+**[📦 Project Structure (Partial)](#-project-structure-partial)**
 
-**[Roadmap](#roadmap)**
+**[🗺️ Roadmap](#L168)**
 
-**[References](#references)**
+**[📝 References](#-references)**
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -66,7 +66,7 @@
     Create a file `data/devices.py` to contain your device name. For device name, you may check your available devices using `adb devices`
     Example layout: ```emulators = ["emulator-5554", "emulator-5556", "emulator-5558"]```
 
-## Usage
+## 🧭 Usage
 
 > Your first Run: `python main.py`
 
@@ -80,7 +80,7 @@ python main.py --app [AppId] --name [csv_name] --emulator --rand
 - `--name [csv_name]` (Default: "c.ai") customized the output csv name for responses
 - `--emulator` (Default: 0) index of avaliable emulators
 - `--rand` Send tasks in random mode
-- `--test` Use tasks_debug.json for test run
+- `--test` Use `tasks_debug.json` for test run
 
 In `util/automation.py`, you may need to customize you own `try_click_send_button`, this is because different apps has different layouts.
 You may modify the `create_session` function generate `check.xml` file to inspect.
@@ -89,11 +89,11 @@ You may modify the `create_session` function generate `check.xml` file to inspec
 
 - **Jailbreak options:** `short_DAN`, `long_DAN`, `STAN`, (Source: [Chat GPT "DAN" (and other "Jailbreaks")](https://gist.github.com/coolaj86/6f4f7b30129b0251f61fa7baaa881516))
 
-## Project Details
+## 🗃️ Project Details
 
 ### Sending Messages
 
-1. Retrieve jailbreak prompt and tasks list from `data/prompts/jailbreak.py`
+1. Retrieve jailbreak prompt and tasks list from `data/jailbreak.py`
 
 2. Locate the message box (EditText)
 
@@ -141,38 +141,38 @@ You may modify the `create_session` function generate `check.xml` file to inspec
 
   - However, if the same command without `--rand` has been executed previously and the `.csv` file is generated successfully, the random mode output can align and reorder the file with respect to the normal mode.
 
-## Project Structure
+## 📦 Project Structure (Partial)
 
 ```bash
-LLM-App-Automation/
-├── main.py # Entry point of the application 
-├── requirements.txt # Python dependencies 
-├── util/ 
-│   ├── automation.py # Core automation logic   
-│   ├── log.py # Logging utilities 
-│   ├── storage.py # Local/remote storage handling 
-│   └── rainbow.py # Rainbow table for app interfaces handling
-├── debug/ 
-│   ├── interface_tester.py # Test for new interfaces
-│   ├── tasks_reset.py # Regenerate unprocessed.json when error occured
-├── data/ 
-│   ├── prompts # parsing jailbreak prompts and tasks list
-│   │   ├── jailbreak.py # Store jailbreak prompts and tasks list
-│   │   ├── tasks_debug.json # Small set of tasks for test run
-│   │   └── tasks.json # Full set of tasks 
-│   ├── devices.py # List of emulator
-│   └── responses # Folder to store responses
-└── .gitignore # Git ignore rules
+LLM-powered_Apps_challenges
+├── LLM-App-Automation/
+│   ├── main.py # Entry point of the application 
+│   ├── util/ 
+│   │   ├── log.py # Logging utilities 
+│   │   ├── storage.py # Local/remote storage handling 
+│   │   └── rainbow.py # Rainbow table for app interfaces handling
+│   ├── debug/ 
+│   │   ├── interface_tester.py # Test for new interfaces
+│   │   ├── tasks_reset.py # Regenerate unprocessed.json when error occured
+│   ├── data/ 
+│   │   ├── jailbreak.py # parsing jailbreak prompts and tasks list
+│   │   └── devices.py # List of emulator
+│   └── requirements.txt # Python dependencies 
+└── Data
+    ├── Responses_App # Folder to store responses
+    └── Prompts
+        ├── tasks_debug.json # Small set of tasks for test run
+        └── tasks.json # Full set of tasks
 ```
 
-## Roadmap
+## 🗺️ Roadmap
 
 - [x] Add CLI interface for easier interaction
 - [x] Integrate with external LLM APIs
 - [ ] Add testing framework (e.g., pytest)
-- [x] Improve logging and monitoring (util/log.py)
+- [x] Improve logging and monitoring [(util/log.py)](util/log.py)
 
-## References
+## 📝 References
 
 [Chat GPT "DAN" (and other "Jailbreaks")](https://gist.github.com/coolaj86/6f4f7b30129b0251f61fa7baaa881516)
 
