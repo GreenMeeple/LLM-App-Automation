@@ -1,5 +1,7 @@
 # LLM-App-Automation
 
+> This Repository is a seperately version of the project [LLM-Powered-App-Challenges](https://github.com/GreenMeeple/LLM-Powered-Apps-Challenges)
+
 ## Overview
 
 **LLM-App-Automation** is a Python-based automation tool designed to interact and collect responses with streamline workflows involving LLM-powered Apps using [uiautomator2](https://github.com/openatx/uiautomator2). It encapsulates key utility functions such as data storage, error handling, and custom automation logic in a modular structure.
