@@ -1,0 +1,2 @@
+ordered_set==4.1.0
+uiautomator2==3.2.8
